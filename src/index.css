@@ -1,0 +1,80 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+::-webkit-scrollbar {
+  display: none; }
+
+html {
+  font-size: 62.5%;
+  font-family: 'Noto Serif', serif; }
+
+body {
+  box-sizing: border-box; }
+
+.app__info-parent {
+  display: flex; }
+
+.header {
+  display: flex;
+  border-bottom: 5px solid rgba(0, 0, 0, 0.075);
+  position: relative;
+  height: 15vh;
+  align-items: center;
+  overflow: hidden; }
+  .header__h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+    text-align: center;
+    font-size: 5rem;
+    height: 100%;
+    border-right: 2.5px solid rgba(0, 0, 0, 0.075); }
+  .header__scan-section {
+    font-size: 3rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    border-left: 2.5px solid rgba(0, 0, 0, 0.075); }
+  .header__scan-btn {
+    border-radius: 100%;
+    width: 10rem;
+    height: 10rem;
+    border: 0;
+    background: #f38e20;
+    color: white;
+    font-size: 3rem;
+    box-shadow: 0 .25rem 1.25rem black;
+    outline: none;
+    cursor: pointer; }
+    .header__scan-btn:hover {
+      background: white;
+      color: black; }
+    .header__scan-btn:active {
+      border: 1px solid #f38e20;
+      box-shadow: none; }
+
+.data-display {
+  width: 50vw;
+  height: 85vh;
+  border-right: 2.5px solid rgba(0, 0, 0, 0.075); }
+
+.summary-list {
+  width: 50vw;
+  border-left: 2.5px solid rgba(0, 0, 0, 0.075); }
+
+.chart-section {
+  height: 65%;
+  border-bottom: 2.5px solid rgba(0, 0, 0, 0.075); }
+
+.data-section {
+  height: 35%;
+  border-top: 2.5px solid rgba(0, 0, 0, 0.075); }
