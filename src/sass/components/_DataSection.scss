@@ -1,4 +1,23 @@
-.data-section{
-    height: 35%;
-    border-top: 2.5px solid rgba(0, 0, 0, .075);
+.data-section {
+    max-height: 36%;
+    overflow-y: scroll;
+    border-top: 5px solid rgba(0, 0, 0, .075);
+
+    &__tr {
+        &:hover {
+            background: whitesmoke;
+        }
+    }
+
+    &__td {
+        text-align: center;
+    }
+
+    &__h2 {
+        font-size: 4rem;
+        text-align: center;
+        // border-bottom: 3px solid rgb(21, 67, 96);
+        width: fit-content;
+        margin: 0 auto .5rem auto;
+    }
 }

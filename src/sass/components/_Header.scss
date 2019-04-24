@@ -2,7 +2,7 @@
     display: flex;
     border-bottom: 5px solid rgba(0, 0, 0, .075);
     position: relative;
-    height: 15vh;
+    height: 12.5vh;
     align-items: center;
     overflow: hidden;
 
@@ -14,8 +14,9 @@
         padding: 0;
         width: 50%;
         text-align: center;
-        font-size: 5rem;
+        font-size: 7.5rem;
         height: 100%;;
+        color: rgb(21, 67, 96);
         border-right: 2.5px solid rgba(0, 0, 0, .075);
     }
 
@@ -26,17 +27,18 @@
         align-items: center;
         width: 50%;
         height: 100%;
+        color: rgb(21, 67, 96);
         border-left: 2.5px solid rgba(0, 0, 0, .075);
     }
 
     &__scan-btn {
         border-radius: 100%;
-        width: 10rem;
-        height: 10rem;
+        width: 9rem;
+        height: 9rem;
         border: 0;
         background: rgb(243, 142, 32);
         color: white;
-        font-size: 3rem;
+        font-size: 2.75rem;
         box-shadow: 0 .25rem 1.25rem black;
         outline: none;
         cursor: pointer;

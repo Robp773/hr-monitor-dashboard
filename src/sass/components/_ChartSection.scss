@@ -1,4 +1,24 @@
-.chart-section{
+.chart-section {
     height: 65%;
-    border-bottom: 2.5px solid rgba(0, 0, 0, .075);
+    margin-bottom: 1rem;
+
+    &--summary {
+        height: 100%;        
+    }
+
+    &__chart-container {
+        display: inline-block;
+        width: 50%;
+        height: 50%;
+    }
+
+    &__h2 {
+        margin: 0 auto;
+        padding: 0;
+        flex-basis: 100%;
+        text-align: center;
+        font-size: 4rem;
+        width: fit-content;
+        // border-bottom: 3px solid rgb(21, 67, 96);
+    }
 }

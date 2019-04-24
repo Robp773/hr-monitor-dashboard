@@ -5,12 +5,9 @@
   padding: 0;
   box-sizing: inherit; }
 
-::-webkit-scrollbar {
-  display: none; }
-
 html {
   font-size: 62.5%;
-  font-family: 'Noto Serif', serif; }
+  font-family: 'PT Serif', serif; }
 
 body {
   box-sizing: border-box; }
@@ -18,11 +15,16 @@ body {
 .app__info-parent {
   display: flex; }
 
+.app__data-display {
+  width: 50vw;
+  height: 85vh;
+  border-right: 2.5px solid rgba(0, 0, 0, 0.075); }
+
 .header {
   display: flex;
   border-bottom: 5px solid rgba(0, 0, 0, 0.075);
   position: relative;
-  height: 15vh;
+  height: 12.5vh;
   align-items: center;
   overflow: hidden; }
   .header__h1 {
@@ -33,8 +35,9 @@ body {
     padding: 0;
     width: 50%;
     text-align: center;
-    font-size: 5rem;
+    font-size: 7.5rem;
     height: 100%;
+    color: #154360;
     border-right: 2.5px solid rgba(0, 0, 0, 0.075); }
   .header__scan-section {
     font-size: 3rem;
@@ -43,15 +46,16 @@ body {
     align-items: center;
     width: 50%;
     height: 100%;
+    color: #154360;
     border-left: 2.5px solid rgba(0, 0, 0, 0.075); }
   .header__scan-btn {
     border-radius: 100%;
-    width: 10rem;
-    height: 10rem;
+    width: 9rem;
+    height: 9rem;
     border: 0;
     background: #f38e20;
     color: white;
-    font-size: 3rem;
+    font-size: 2.75rem;
     box-shadow: 0 .25rem 1.25rem black;
     outline: none;
     cursor: pointer; }
@@ -62,19 +66,113 @@ body {
       border: 1px solid #f38e20;
       box-shadow: none; }
 
-.data-display {
-  width: 50vw;
-  height: 85vh;
-  border-right: 2.5px solid rgba(0, 0, 0, 0.075); }
-
 .summary-list {
   width: 50vw;
-  border-left: 2.5px solid rgba(0, 0, 0, 0.075); }
+  border-left: 2.5px solid rgba(0, 0, 0, 0.075);
+  overflow-y: scroll;
+  max-height: 85vh; }
+  .summary-list__h2 {
+    font-size: 4rem;
+    width: fit-content;
+    margin: 0 auto .5rem auto; }
+  .summary-list__table {
+    text-align: center;
+    width: 95%;
+    margin: auto; }
+    .summary-list__table > * th {
+      font-size: 3rem;
+      width: 20%; }
+    .summary-list__table > * td {
+      text-align: left;
+      font-size: 2.5rem;
+      max-width: 20ch;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 0 .25rem; }
+    .summary-list__table > * .data-section__td {
+      text-align: center; }
+  .summary-list__list-item {
+    cursor: pointer;
+    transition: .05s;
+    padding: .25rem; }
+    .summary-list__list-item:hover {
+      transform: scale(1.025);
+      background: whitesmoke; }
 
 .chart-section {
   height: 65%;
-  border-bottom: 2.5px solid rgba(0, 0, 0, 0.075); }
+  margin-bottom: 1rem; }
+  .chart-section--summary {
+    height: 100%; }
+  .chart-section__chart-container {
+    display: inline-block;
+    width: 50%;
+    height: 50%; }
+  .chart-section__h2 {
+    margin: 0 auto;
+    padding: 0;
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 4rem;
+    width: fit-content; }
 
 .data-section {
-  height: 35%;
-  border-top: 2.5px solid rgba(0, 0, 0, 0.075); }
+  max-height: 36%;
+  overflow-y: scroll;
+  border-top: 5px solid rgba(0, 0, 0, 0.075); }
+  .data-section__tr:hover {
+    background: whitesmoke; }
+  .data-section__td {
+    text-align: center; }
+  .data-section__h2 {
+    font-size: 4rem;
+    text-align: center;
+    width: fit-content;
+    margin: 0 auto .5rem auto; }
+
+.sign-in {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1e3c72;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2a5298, #1e3c72);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2a5298, #1e3c72);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+  .sign-in__banner {
+    height: 8vh;
+    width: 45vw;
+    position: absolute;
+    top: 10%; }
+  .sign-in__h1 {
+    font-size: 7rem;
+    z-index: 999;
+    position: absolute;
+    top: 22.5%;
+    color: whitesmoke; }
+  .sign-in__form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    .sign-in__form > input {
+      border: 1px solid gray;
+      font-size: 3rem;
+      padding: 1rem; }
+    .sign-in__form > button {
+      font-size: 3rem;
+      margin: auto 1rem;
+      padding: 1rem;
+      background: #f38e20;
+      color: white;
+      border: 1px solid transparent;
+      cursor: pointer; }
+      .sign-in__form > button:hover {
+        background: white;
+        color: black;
+        border: 1px solid black; }

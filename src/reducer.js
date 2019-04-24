@@ -1,13 +1,11 @@
-const initialState = {};
+const initialState = {validationList: [{time: null}]};
 
 export const reducer = (state = initialState, action) => {
 
     if (action.type === "SET_STATE") {
         return Object.assign({},
-            state, {
-                activationChosen: true
-            },
-            action.state
+            state,
+            {validationList: action.validationList}
         );
     }
 
