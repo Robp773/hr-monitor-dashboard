@@ -15,12 +15,13 @@ export class App extends React.Component {
     super(props);
     this.state = {
       signedIn: true,
-      indexToDisplay: null
+      indexToDisplay: null,
     }
     this.changeSummary = this.changeSummary.bind(this);
     this.clearModal = this.clearModal.bind(this);
   }
   componentWillMount(){
+
     fetch(`${API_BASE_URL}/data`).then((response)=>{
       return response.json()
       .then((result)=>{
@@ -38,41 +39,43 @@ export class App extends React.Component {
   }
 
   render() {
-    let summaryObj = {
-      isSummary: true,
-      rowCount: 0,
-      blankSpaces: 0,
-      brokenLinks: 0,
-      chartLables: [],
-      chartData: [],
-      typeCount:{
-        "State Government": 0,
-        "Largest Cities": 0,
-        County: 0,
-        Utilities: 0,
-        Airport: 0,
-        "News Stations": 0,
-        Ports: 0,
-        Colleges: 0
-      }
-    };
-    if(!this.state.indexToDisplay){
-      this.props.validationList.map((item)=>{
+
+      let summaryObj = {
+        isSummary: true,
+        rowCount: 0,
+        blankSpaces: 0,
+        brokenLinks: 0,
+        chartLables: [],
+        chartData: [],
+        typeCount: {
+          "State Government": 0,
+          "Largest Cities": 0,
+          County: 0,
+          Utilities: 0,
+          Airport: 0,
+          "News Stations": 0,
+          Ports: 0,
+          Colleges: 0
+        }
+      };
+
+      this.props.validationList.map((item) => {
         summaryObj.chartLables.push(item.state);
         summaryObj.chartData.push(item.brokenLinks + item.blankSpaces)
         summaryObj.rowCount += item.rowCount;
-        summaryObj.blankSpaces += item.blankSpaces;  
+        summaryObj.blankSpaces += item.blankSpaces;
         summaryObj.brokenLinks += item.brokenLinks;
-        for(let key in item.typeCount){
-          if(key in summaryObj.typeCount){
-          summaryObj.typeCount[key] += item.typeCount[key]
+        for (let key in item.typeCount) {
+          if (key in summaryObj.typeCount) {
+            summaryObj.typeCount[key] += item.typeCount[key]
           }
         }
       })
-    }
+
     if(!this.state.signedIn){
       return <SignIn clearModal={this.clearModal}/>
     }
+
     else{
     return (
       <div className="app">
