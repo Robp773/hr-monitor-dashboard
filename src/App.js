@@ -16,12 +16,14 @@ export class App extends React.Component {
     this.state = {
       signedIn: false,
       indexToDisplay: null,
+      dataModalOpen: false
     }
     this.changeSummary = this.changeSummary.bind(this);
     this.clearModal = this.clearModal.bind(this);
+    this.toggleDataModal = this.toggleDataModal.bind(this);
   }
-  componentWillMount(){
 
+  componentWillMount(){
     fetch(`${API_BASE_URL}/data`).then((response)=>{
       return response.json()
       .then((result)=>{
@@ -36,6 +38,10 @@ export class App extends React.Component {
 
   clearModal(){
     this.setState({signedIn: true})
+  }
+
+  toggleDataModal(){
+    this.setState({dataModalOpen: !this.state.dataModalOpen})
   }
 
   render() {
@@ -86,7 +92,7 @@ export class App extends React.Component {
 
           <div className='app__data-display'>        
             <ChartSection data={this.props.validationList[this.state.indexToDisplay] || summaryObj} />
-            <DataSection data={this.props.validationList[this.state.indexToDisplay] || this.props.fullState.validationList}/>
+            <DataSection toggleModal={this.toggleDataModal} modalStatus={this.state.dataModalOpen} data={this.props.validationList[this.state.indexToDisplay] || this.props.fullState.validationList}/>
           </div>
 
             <SummaryList changeSummary={this.changeSummary} summaryTotals={summaryObj} validationList={this.props.validationList}/>

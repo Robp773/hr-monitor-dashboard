@@ -11,7 +11,7 @@ export default class SummaryList extends React.Component {
 
     let summaryList = this.props.validationList.map((item, index)=>{
           return (
-          <tr onClick={()=>{this.props.changeSummary(index)}} key={index} className='summary-list__list-item'>
+          <tr onClick={()=>{this.props.changeSummary(index)}} key={index} className={`summary-list__list-item ${index % 2 === 0 ? 'odd': 'even'}`}>
               <td className='summary-list__list-item-section'><b>Name:</b> {item.state}</td>
               <td className='summary-list__list-item-section'><b>Rows:</b> {item.rowCount}</td>
               <td className='summary-list__list-item-section'><b>Blanks:</b> {item.blankSpaces}</td>
@@ -34,7 +34,7 @@ export default class SummaryList extends React.Component {
                 <th className=''></th>
             </tr>
 
-            <tr onClick={()=>{this.props.changeSummary(null)}} className='summary-list__list-item'>   
+            <tr onClick={()=>{this.props.changeSummary(null)}} className='summary-list__list-item even'>   
                 <td className='summary-list__list-item-section'><b>Name: </b>Summary</td>
                 <td className='summary-list__list-item-section'><b>Rows:</b> {this.props.summaryTotals.rowCount}</td>
                 <td className='summary-list__list-item-section'><b>Blanks:</b> {this.props.summaryTotals.blankSpaces}</td>
