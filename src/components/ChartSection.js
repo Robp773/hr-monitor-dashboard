@@ -2,8 +2,6 @@ import React from 'react';
 import { Doughnut, Pie, Bar } from 'react-chartjs-2';
 import states from 'us-state-codes';
 
-
-
 export default class ChartSection extends React.Component {
     constructor(props) {
         super(props);

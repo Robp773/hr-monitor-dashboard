@@ -10,7 +10,6 @@ export default class DataSection extends React.Component {
 
     componentDidMount() {
       window.addEventListener('keydown', this.handleKeyDown);
-
     }
 
     componentWillUnmount() {
@@ -26,17 +25,16 @@ export default class DataSection extends React.Component {
     }
 
   render() {
-    console.log(this.props.data)
     let data;
-  if(this.props.data.data){  
-       data = this.props.data.data.map((item, index)=>{
-        return  (     
-          <tr className={`data-section__tr ${index % 2 === 0 ? 'even': 'odd'}`} key={index}>   
-            <td className='data-section__td data-section__td--url'><a onClick={(e)=>{e.stopPropagation()}} target='#' href={item.value ? item.value : null}>{item.value ? item.value : 'N/A'}</a></td>
-            <td className='data-section__td'>{item.status.toUpperCase()}</td>
-            <td className='data-section__td'>Row {item.row} Col {item.col}</td>
-          </tr>
-        )
+    if(this.props.data.data){  
+        data = this.props.data.data.map((item, index)=>{
+          return  (     
+            <tr className={`data-section__tr ${index % 2 === 0 ? 'even': 'odd'}`} key={index}>   
+              <td className='data-section__td data-section__td--url'><a onClick={(e)=>{e.stopPropagation()}} target='#' href={item.value ? item.value : null}>{item.value ? item.value : 'N/A'}</a></td>
+              <td className='data-section__td'>{item.status.toUpperCase()}</td>
+              <td className='data-section__td'>Row {item.row} Col {item.col}</td>
+            </tr>
+          )
       })
     if(this.props.modalStatus){
     return (
