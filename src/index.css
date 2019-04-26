@@ -51,7 +51,7 @@ body {
       .header__h1 {
         font-size: 7.5rem; } }
   .header__scan-section {
-    font-size: 2rem;
+    font-size: 2.5rem;
     display: flex;
     justify-content: space-around;
     align-items: center;
