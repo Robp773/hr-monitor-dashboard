@@ -57,7 +57,7 @@ let dataThree, optionsThree;
 
       let data = {
       datasets: [{   
-          data: [this.props.data.brokenLinks, this.props.data.blankSpaces, ((this.props.data.rowCount * 3) - (this.props.data.blankSpaces + this.props.data.brokenLinks))],
+          data: [this.props.data.brokenLinks, this.props.data.blankSpaces, ((this.props.data.rowCount * 3 + this.props.data.falsePositives) - (this.props.data.blankSpaces + this.props.data.brokenLinks))],
           backgroundColor: [
             'red',
             'rgba(0,0,0,.075)',
