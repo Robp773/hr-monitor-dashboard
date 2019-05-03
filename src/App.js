@@ -14,7 +14,7 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      signedIn: true,
+      signedIn: false,
       indexToDisplay: null,
       dataModalOpen: false
     };
